@@ -200,12 +200,12 @@
     </div>
 
     <div class="purpose-banner">
-      This is a DEXLab research prototype. We are figuring out what use cases such an Avatar has. Let <a href="mailto:d.mahr@maastrichtuniversity.nl" style="color:var(--orange);text-decoration:none;font-weight:600;">Dominik</a> or <a href="mailto:h.nguyenviet@student.maastrichtuniversity.nl" style="color:var(--orange);text-decoration:none;font-weight:600;">Hoang</a> know what you think!
+      This is a DEXLab research prototype. We are figuring out what use cases such an Avatar has. Let <a href="/cdn-cgi/l/email-protection#03672d6e626b71436e62627077716a606b77766d6a756671706a777a2d6d6f" style="color:var(--orange);text-decoration:none;font-weight:600;">Dominik</a> or <a href="/cdn-cgi/l/email-protection#355d1b5b52404c505b435c50417546414051505b411b5854544641475c565d41405b5c435047465c414c1b5b59" style="color:var(--orange);text-decoration:none;font-weight:600;">Hoang</a> know what you think!
     </div>
 
     <div class="api-input-wrap">
       <label for="apiKeyInput">Your Tavus API Key</label>
-      <input type="password" id="apiKeyInput" placeholder="tvs_..." autocomplete="off" spellcheck="false" />
+      <input type="password" id="apiKeyInput" placeholder="Paste your API key..." autocomplete="off" spellcheck="false" />
       <span class="key-hint">Provided by the course team. Do not share it.</span>
     </div>
 
@@ -274,12 +274,12 @@
 
   <div class="footer">
     EBC2205 Managing and Innovating Business Ecosystems &nbsp;&middot;&nbsp; 2025-2026<br>
-    Questions about this tool? Contact <a href="mailto:h.nguyenviet@student.maastrichtuniversity.nl">h.nguyenviet@student.maastrichtuniversity.nl</a>
+    Questions about this tool? Contact <a href="/cdn-cgi/l/email-protection#422a6c2c25373b272c342b27360231363726272c366c2f23233136302b212a36372c2b342730312b363b6c2c2e"><span class="__cf_email__" data-cfemail="2d4503434a585448435b4448596d5e59584948435903404c4c5e595f444e45595843445b485f5e445954034341">[email&#160;protected]</span></a>
   </div>
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const PERSONA_ID = "OIDp81c2de378c6";
   const SHEET_URL  = "https://script.google.com/macros/s/AKfycbwl1tKBuuUXVnoCqrw31fkA19Xnx6lbbFxUBNOhlGn2rb4DOloIk2Wjf6pId6j8b1ZUyw/exec";
 
@@ -338,7 +338,7 @@
     if (sessionActive) return;
     const key = document.getElementById("apiKeyInput").value.trim();
     if (!key) { showError("Please enter your Tavus API key before starting."); return; }
-    if (!key.startsWith("tvs_") || key.length < 20) { showError("That does not look like a valid Tavus API key. It should start with tvs_"); return; }
+    if (key.length < 10) { showError("That does not look like a valid API key."); return; }
 
     sessionActive = true;
     document.getElementById("startBtn").disabled = true;
@@ -406,17 +406,4 @@
     conversationId = null;
     sessionActive  = false;
     sessionStart   = null;
-    document.getElementById("startBtn").disabled = false;
-    show("screen-thankyou");
-    setTimeout(() => show("screen-landing"), 3500);
-  }
-
-  window.addEventListener("beforeunload", () => {
-    if (conversationId) {
-      const key = document.getElementById("apiKeyInput").value.trim();
-      if (key) navigator.sendBeacon("https://tavusapi.com/v2/conversations/" + conversationId + "/end");
-    }
-  });
-</script>
-</body>
-</html>
+    document.getEleme
